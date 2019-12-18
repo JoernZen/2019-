@@ -1,0 +1,10 @@
+setuptools==41.0.0
+Keras
+numpy
+pandas
+matplotlib
+tensorflow
+six
+sklearn
+Pillow
+scikit-learn

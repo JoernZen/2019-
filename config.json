@@ -1,0 +1,25 @@
+{
+    "Model":{
+        "give_up":false,
+        "file_path":"./model/model.h5"
+    },
+    "Train":{
+        "enable":true,
+        "cycle_train":true,
+        "show_graphics":false,
+        "display_mode":2,
+        "epoch":32,
+        "batch_size":128,
+        "expansion":false,
+        "Train_set":{
+            "image_source":"./data/train/"
+        }
+    },
+    "Test":{
+        "enable":false,
+        "test_result_file":"./result/submission.csv",
+        "Test_set":{
+            "image_source":"./data/test/"
+        }
+    }
+}
