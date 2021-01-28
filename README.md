@@ -1,16 +1,26 @@
 # 2019-全国高校计算机能力挑战赛-人工智能算法赛
-#验证码图片内容识别
 
-临近期末考试了，所以这个README写的比较简略，等到考试结束后再来补充完整顺便翻译成英文版本。
+# Usage Scenario
+1 Four-digit verification code;
+2 Fixed size image form input
 
-比赛的内容简单介绍下，就是给定验证码，然后识别其中的内容，所有的验证码都是四位验证码。这个数据集有的图片真的是肉眼完全分辨不了，对比度非常低。
-我尝试过很多的数据集处理方法，都不能很好的解决那些对比度非常不明显的图片，例如测试集的‘99.jpg’这样的图片。
+# Review
+Looking back on this competition more than a year later, I have to say that its difficulty is very suitable for novices to participate. Reading the source code, programming by myself, and then learning to reuse the code, taught me a lot step by step. When I encountered a problem which I didn’t understand, I would search the problem on the Internet, then tried to solve the problem. What's more, I also learnt how to optimize. In general, this competition gave me a good understanding of the basic knowledge of deep learning, and it also had a great influence on my participation in more competitions.
 
-模型比较简单，主要的内容都在main函数里，建模直接调用了github里面resnet的成型函数，效果比vgg好大约4%的准确度，在数据集不增广、不处理的情况下可以直接
-达到96.4的准确度，如果对数据集进行很好的处理或者增广数据集，轻松达到98以上的准确度是不成问题的。
+# Introduction
+This competition requires verification code identification, the verification code is 4 digits, composed of numbers and letters. The difficulty lies in the presence of interference lines, salt and pepper noise and contrast in the picture (this is especially important for achieving a high ranking).
 
-需要的库已经放在requirement中，直接安装即可，keras建议升级到最新的即可。
+Since the position of the verification code in the picture is relatively fixed, I directly modified the final output channel of the convolutional layer and converted it to 4 channels to output four results. This effect performed well in the test.
 
-训练和测试模型都通过config.json控制，修改其中的enable的配置信息为true或者false即可。
+# Installation
+This program based on tensorflow1.x and keras, so you should install these libraries.
 
-运行则直接 python main.py即可。
+Then you should install all the libraries in requirements.txt.
+
+# Run
+Run "python main.py"
+
+And you can control some configurations in config.json which contains "train" and "test" options
+
+# Suggestions
+In the competition, this program can easily achieve 96% accuracy on datasets. If you can augment the data and properly preprocess the image to solve the problem of contrast, you can easily achieve more than 98% accuracy.
