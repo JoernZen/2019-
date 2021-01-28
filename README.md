@@ -1,7 +1,7 @@
 # 2019-全国高校计算机能力挑战赛-人工智能算法赛
 
 # Usage Scenario
-1 Four-digit verification code;
+1 Four-digit verification code
 2 Fixed size image form input
 
 # Review
